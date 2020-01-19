@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class BoardController {
 
@@ -16,6 +17,8 @@ public class BoardController {
     public BoardController(Board board, BoardView boardView) {
         this.board = board;
         this.boardView = boardView;
+        Stage stage = new Stage();
+        boardView.start(stage);
         boardView.getEnter().setOnAction(e -> enterClicked());
     }
 
